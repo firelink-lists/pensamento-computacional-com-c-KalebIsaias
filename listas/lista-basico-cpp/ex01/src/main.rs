@@ -10,17 +10,15 @@
  * @test name="Nome vazio" input="" expected="Olá, !"
  */
 
-#include <iostream>
-#include <string>
+use std::io;
 
-using namespace std;
+fn main() {
+    let mut name = String::new();
+    
+    println!("Qual o seu nome?");
+    io::stdin().read_line(&mut name).unwrap();
+    let name = name.trim_end_matches(['\n', '\r']);
 
-int main() {
-    string nome;
     
-    // TODO: Leia o nome do usuário
-    
-    // TODO: Exiba a saudação personalizada
-    
-    return 0;
+    println!("Olá, {}!", name);
 }
